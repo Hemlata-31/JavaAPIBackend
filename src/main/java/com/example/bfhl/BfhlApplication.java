@@ -40,7 +40,6 @@ public class BfhlApplication implements CommandLineRunner {
             response = restTemplate.postForEntity(generateUrl, request, Map.class);
         } catch (Exception e) {
             System.err.println("Error generating webhook: " + e.getMessage());
-            System.exit(1);
             return;
         }
         
@@ -77,7 +76,5 @@ public class BfhlApplication implements CommandLineRunner {
         } else {
             System.out.println("Failed to get response body from webhook generation.");
         }
-        
-        System.exit(0);
     }
 }
